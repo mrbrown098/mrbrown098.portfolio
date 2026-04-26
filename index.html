@@ -3,267 +3,316 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAHAD aka Mr. Brown — Self-Made Digital Operator</title>
+<title>Fahad — Digital Operator & Security Enthusiast</title>
+<meta name="description" content="Self-made digital operator from Pakistan. Graphic design, digital marketing, social media management, and offensive security. Available for freelance work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0a0f1e;--bg2:#0d1528;--acc:#00ffe0;--acc2:#ff4d6d;--acc3:#ffd60a;
+  --bg:#080d1a;--bg2:#0d1528;--acc:#00ffe0;--acc2:#ff4d6d;--acc3:#ffd60a;
   --glass:rgba(255,255,255,0.04);--glass2:rgba(255,255,255,0.07);
-  --border:rgba(255,255,255,0.08);--border-acc:rgba(0,255,224,0.2);
-  --txt:#94a3b8;--txt2:#cbd5e1;--white:#e8f4ff;--nav-h:60px
+  --border:rgba(255,255,255,0.09);--border-acc:rgba(0,255,224,0.22);
+  --txt:#8899b4;--txt2:#c4d0e0;--white:#eef4ff;--nav-h:62px;
+  --radius:12px
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
-body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased;font-size:16px}
 @media(pointer:fine){
   .cur,.cur-r{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);will-change:left,top}
   .cur{width:8px;height:8px;background:var(--acc)}
-  .cur-r{width:28px;height:28px;border:1px solid rgba(0,255,224,.3);z-index:9998}
+  .cur-r{width:30px;height:30px;border:1px solid rgba(0,255,224,.28);z-index:9998;transition:width .2s,height .2s}
 }
 @media(pointer:coarse){body{cursor:auto}}
 #sf{position:fixed;inset:0;z-index:0;pointer-events:none}
 nav,.section,section,footer{position:relative;z-index:2}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(10,15,30,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:3px;color:var(--acc)}
-.nav-links{display:flex;list-style:none;gap:.2rem}
-.nav-links a{display:flex;align-items:center;gap:.35rem;padding:.4rem .75rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:1.5px;color:var(--txt);text-decoration:none;text-transform:uppercase;border-radius:6px;transition:all .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--glass2)}
-.nav-links a svg{width:12px;height:12px;opacity:.6;flex-shrink:0}
-.nav-links a:hover svg,.nav-links a.active svg{opacity:1}
-@media(max-width:700px){.nav-links{display:none}}
+/* ── NAV (Daniel style — pill links, no logo) ── */
+nav{
+  position:fixed;top:1rem;left:50%;transform:translateX(-50%);z-index:100;
+  display:flex;align-items:center;gap:.25rem;
+  padding:.4rem .5rem;
+  background:rgba(8,13,26,.85);backdrop-filter:blur(20px);
+  border:1px solid var(--border);border-radius:999px;
+  box-shadow:0 4px 24px rgba(0,0,0,.4)
+}
+.nav-links{display:flex;list-style:none;gap:.15rem}
+.nav-links a{
+  display:flex;align-items:center;gap:.35rem;padding:.42rem .9rem;
+  font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:1.5px;
+  color:var(--txt);text-decoration:none;text-transform:uppercase;
+  border-radius:999px;transition:all .2s;white-space:nowrap
+}
+.nav-links a svg{width:11px;height:11px;opacity:.5;flex-shrink:0}
+.nav-links a:hover{color:var(--white);background:var(--glass2)}
+.nav-links a:hover svg{opacity:1}
+.nav-links a.active{color:var(--white);background:rgba(255,255,255,.1)}
+.nav-links a.active svg{opacity:1}
+@media(max-width:680px){nav{display:none}}
 
-/* HERO */
-#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--nav-h)+2rem) 1.5rem 5rem;position:relative}
-.hero-glow{position:absolute;width:700px;height:700px;background:radial-gradient(ellipse,rgba(0,255,224,.05) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;animation:gPulse 6s ease-in-out infinite}
-@keyframes gPulse{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}}
-.photo-wrap{position:relative;width:130px;height:130px;margin:0 auto 1.4rem;animation:floatY 7s ease-in-out infinite}
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.photo-wrap img{width:130px;height:130px;border-radius:50%;object-fit:cover;border:2px solid rgba(0,255,224,.2);position:relative;z-index:2;display:block}
-.pr1,.pr2{position:absolute;border-radius:50%;top:0;left:0;right:0;bottom:0}
-.pr1{inset:-8px;border:1px solid rgba(0,255,224,.15);animation:spin 16s linear infinite}
-.pr2{inset:-18px;border:1px dashed rgba(0,255,224,.07);animation:spin 24s linear infinite reverse}
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--nav-h)+3rem) 1.5rem 5rem;position:relative}
+.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(ellipse,rgba(0,255,224,.048) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;animation:gPulse 7s ease-in-out infinite}
+@keyframes gPulse{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.07)}}
+
+.photo-wrap{position:relative;width:160px;height:160px;margin:0 auto 1.6rem;animation:floatY 7s ease-in-out infinite}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.photo-wrap img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:2px solid rgba(0,255,224,.22);position:relative;z-index:2;display:block}
+.pr1,.pr2{position:absolute;border-radius:50%}
+.pr1{inset:-10px;border:1px solid rgba(0,255,224,.14);animation:spin 16s linear infinite}
+.pr2{inset:-22px;border:1px dashed rgba(0,255,224,.06);animation:spin 24s linear infinite reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
-.pdot{position:absolute;width:6px;height:6px;background:var(--acc);border-radius:50%;top:-3px;left:50%;box-shadow:0 0 6px var(--acc);animation:spin 16s linear infinite;transform-origin:0 69px}
-.hero-tag{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--acc);letter-spacing:4px;text-transform:uppercase;opacity:0;animation:fadeUp .6s .15s forwards}
-h1.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,16vw,12rem);line-height:.85;letter-spacing:6px;background:linear-gradient(160deg,#fff 30%,var(--acc) 70%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeUp .6s .3s both}
+.pdot{position:absolute;width:7px;height:7px;background:var(--acc);border-radius:50%;top:-3.5px;left:50%;box-shadow:0 0 8px var(--acc);animation:spin 16s linear infinite;transform-origin:0 84px}
+
+.hero-tag{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--acc);letter-spacing:4px;text-transform:uppercase;opacity:0;animation:fadeUp .6s .15s forwards;margin-bottom:.3rem}
+h1.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,16vw,12rem);line-height:.85;letter-spacing:6px;background:linear-gradient(160deg,#fff 25%,var(--acc) 75%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeUp .6s .3s both}
 .glitch{position:relative;display:inline-block}
 .glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;font-family:'Bebas Neue',sans-serif;font-size:inherit;letter-spacing:inherit}
 .glitch::before{-webkit-text-fill-color:var(--acc2);animation:g1 5s infinite;clip-path:polygon(0 0,100% 0,100% 35%,0 35%)}
 .glitch::after{-webkit-text-fill-color:var(--acc);animation:g2 5s infinite;clip-path:polygon(0 65%,100% 65%,100% 100%,0 100%)}
 @keyframes g1{0%,94%,100%{transform:translate(0);opacity:0}95%{transform:translate(-3px,1px);opacity:.7}97%{transform:translate(3px,-1px);opacity:.7}}
 @keyframes g2{0%,92%,100%{transform:translate(0);opacity:0}93%{transform:translate(3px,2px);opacity:.6}95%{transform:translate(-2px,-1px);opacity:.6}}
-.tw-wrap{font-family:'Space Mono',monospace;font-size:clamp(.9rem,2.4vw,1.15rem);color:var(--txt2);letter-spacing:1px;margin-top:1.1rem;min-height:3em;display:flex;align-items:center;justify-content:center;animation:fadeUp .6s .5s both;max-width:700px}
+
+.tw-wrap{font-family:'Space Mono',monospace;font-size:clamp(.88rem,2.2vw,1.1rem);color:var(--txt2);letter-spacing:.8px;margin-top:1rem;min-height:3.2em;display:flex;align-items:center;justify-content:center;animation:fadeUp .6s .5s both;max-width:720px}
 .tw-prefix{color:var(--acc);font-weight:700;flex-shrink:0;margin-right:.3rem}
-.typed-cursor{color:var(--acc);font-size:1.2em}
-.avail-badge{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem 1.1rem;border:1px solid rgba(34,197,94,.25);border-radius:999px;background:rgba(34,197,94,.06);font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:1.5px;color:rgba(255,255,255,.7);margin-top:1.4rem;animation:fadeUp .6s .65s both}
+.typed-cursor{color:var(--acc);font-size:1.1em}
+
+.avail-badge{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem 1.1rem;border:1px solid rgba(34,197,94,.28);border-radius:999px;background:rgba(34,197,94,.07);font-family:'Space Mono',monospace;font-size:.64rem;letter-spacing:1.5px;color:rgba(255,255,255,.75);margin-top:1.4rem;animation:fadeUp .6s .65s both}
 .avail-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:ping 2s infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 7px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.55)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+
 .hero-cta{display:flex;gap:.8rem;margin-top:1.4rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .6s .8s both}
-.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.7rem 1.5rem;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:1.5px;text-decoration:none;text-transform:uppercase;border-radius:6px;transition:all .22s;font-weight:700;cursor:pointer;border:none}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.72rem 1.5rem;font-family:'Space Mono',monospace;font-size:.67rem;letter-spacing:1.5px;text-decoration:none;text-transform:uppercase;border-radius:8px;transition:all .22s;font-weight:700;cursor:pointer;border:none}
 .btn-p{background:rgba(0,255,224,.1);border:1px solid rgba(0,255,224,.35);color:var(--acc)}
-.btn-p:hover{background:var(--acc);color:#0a0f1e}
+.btn-p:hover{background:var(--acc);color:#080d1a}
 .btn-s{background:var(--glass2);border:1px solid var(--border);color:var(--txt2)}
-.btn-s:hover{border-color:rgba(255,255,255,.2);color:var(--white)}
-.scroll-hint{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.3rem;animation:fadeUp 1s 1.2s both}
-.scroll-hint span{font-family:'Space Mono',monospace;font-size:.5rem;letter-spacing:3px;color:rgba(255,255,255,.2);text-transform:uppercase}
+.btn-s:hover{border-color:rgba(255,255,255,.22);color:var(--white)}
+
+.scroll-hint{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.35rem;animation:fadeUp 1s 1.2s both}
+.scroll-hint span{font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:3px;color:rgba(255,255,255,.18);text-transform:uppercase}
 .scroll-line{width:1px;height:38px;background:linear-gradient(to bottom,rgba(0,255,224,.4),transparent);animation:sdrop 2s ease-in-out infinite}
 @keyframes sdrop{0%{transform:scaleY(0);transform-origin:top;opacity:1}50%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(1);transform-origin:bottom;opacity:0}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
-/* MARQUEE */
-.marquee-outer{width:100%;overflow:hidden;position:relative;z-index:3;transform:rotate(-2deg) translateY(-6px);margin-bottom:-10px}
-.marquee-wrap{width:110%;margin-left:-5%;padding:.9rem 0;background:linear-gradient(90deg,var(--acc) 0%,rgba(0,200,160,.85) 100%);overflow:hidden}
-.marquee-track{display:flex;width:max-content;animation:mq 28s linear infinite;align-items:center}
+/* ── MARQUEE BAND — bigger, with icon slots ── */
+.marquee-outer{width:100%;overflow:hidden;position:relative;z-index:3;transform:rotate(-2deg) translateY(-4px);margin-bottom:-8px}
+.marquee-wrap{width:112%;margin-left:-6%;padding:1.1rem 0;background:linear-gradient(90deg,#00ffe0,#00d4b8);overflow:hidden}
+.marquee-track{display:flex;width:max-content;animation:mq 32s linear infinite;align-items:center}
 .marquee-track:hover{animation-play-state:paused}
-.marquee-item{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:3px;color:rgba(10,15,30,.85);white-space:nowrap;padding:0 1.2rem;display:flex;align-items:center;gap:.8rem}
-.marquee-item::after{content:'✦';font-size:.6rem;color:rgba(10,15,30,.5)}
+.marquee-item{display:flex;align-items:center;gap:.5rem;padding:0 1.1rem;white-space:nowrap;font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:2.5px;color:rgba(8,13,26,.8)}
+.marquee-item svg{width:16px;height:16px;flex-shrink:0;opacity:.7}
+.marquee-sep{color:rgba(8,13,26,.35);font-size:.6rem;padding:0 .3rem}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* SECTIONS */
+/* ── SECTION BASE ── */
 .section{padding:5rem 1.5rem;max-width:1100px;margin:0 auto}
-.sec-eyebrow{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:5px;color:var(--acc);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:.7rem}
+.sec-eyebrow{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:5px;color:var(--acc);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:.7rem}
 .sec-eyebrow::before{content:'';width:22px;height:1px;background:var(--acc)}
-.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,6vw,4.8rem);line-height:1;letter-spacing:2px;margin-bottom:.5rem;color:var(--white)}
-.sec-sub{font-size:1rem;color:var(--txt);line-height:1.7;margin-bottom:2.5rem;max-width:580px}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,5rem);line-height:1;letter-spacing:2px;margin-bottom:.5rem;color:var(--white)}
+.sec-sub{font-size:1.05rem;color:var(--txt);line-height:1.75;margin-bottom:2.5rem;max-width:580px}
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:.5rem 0}
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
 .reveal.visible{opacity:1;transform:none}
 
-/* PROJECTS — all same big card style, stacked oldest→newest, revealed on scroll */
-.proj-stack{display:flex;flex-direction:column;gap:1.2rem}
-.proj-big{
-  background:var(--glass);border:1px solid var(--border);border-radius:12px;
-  display:grid;grid-template-columns:1fr 280px;overflow:hidden;
-  transition:border-color .22s,transform .22s;opacity:0;transform:translateY(20px)
+/* ── PROJECTS — sticky scroll stack ── */
+#projects-wrap{position:relative}
+.proj-sticky-outer{
+  position:relative;
 }
-.proj-big.visible{opacity:1;transform:none}
-.proj-big:hover{border-color:var(--border-acc);transform:translateY(-2px)}
-@media(max-width:740px){.proj-big{grid-template-columns:1fr}.proj-big-visual{display:none}}
-.proj-big-body{padding:2rem 2.2rem}
-.proj-big-visual{
+.proj-sticky-inner{
+  position:sticky;top:calc(var(--nav-h) + 1rem);
+  display:flex;flex-direction:column;gap:0;
+  padding-bottom:2rem
+}
+/* Each card is a full-width featured card */
+.pcard{
+  background:#0d1528;border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;display:grid;grid-template-columns:1fr 380px;
+  min-height:300px;
+  position:sticky;
+  transition:box-shadow .3s;
+  box-shadow:0 4px 32px rgba(0,0,0,.6)
+}
+.pcard:nth-child(1){top:calc(var(--nav-h) + 1rem)}
+.pcard:nth-child(2){top:calc(var(--nav-h) + 2.5rem)}
+.pcard:nth-child(3){top:calc(var(--nav-h) + 4rem)}
+.pcard:nth-child(4){top:calc(var(--nav-h) + 5.5rem)}
+.pcard:nth-child(5){top:calc(var(--nav-h) + 7rem)}
+.pcard:hover{box-shadow:0 0 0 1px rgba(0,255,224,.2),0 8px 40px rgba(0,0,0,.4)}
+.pcard-body{padding:2.2rem;display:flex;flex-direction:column;justify-content:space-between}
+.pcard-top{}
+.pcard-tag{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:2px;color:var(--acc);text-transform:uppercase;margin-bottom:.6rem}
+.pcard-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:2px;color:var(--white);margin-bottom:.8rem;line-height:1.1}
+.pcard-desc{font-size:.96rem;color:var(--txt);line-height:1.85}
+.pcard-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem}
+.chip{display:inline-flex;align-items:center;gap:.35rem;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:1px;padding:.25rem .65rem;border:1px solid var(--border-acc);color:rgba(0,255,224,.7);border-radius:4px;text-transform:uppercase}
+.chip svg{width:10px;height:10px;flex-shrink:0}
+.chip img{width:11px;height:11px;flex-shrink:0;object-fit:contain;filter:brightness(0) invert(1) opacity(.7)}
+/* project visual panel */
+.pcard-visual{
+  background:#111c35;border-left:1px solid var(--border);
   display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,rgba(0,255,224,.06),rgba(255,77,109,.04));
-  border-left:1px solid var(--border);font-size:5rem;min-height:220px
+  flex-direction:column;gap:1rem;padding:2rem;
+  position:relative;overflow:hidden
 }
-.proj-tag{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:2px;color:var(--acc);text-transform:uppercase;margin-bottom:.55rem}
-.proj-title{font-family:'Bebas Neue',sans-serif;font-size:1.85rem;letter-spacing:2px;margin-bottom:.8rem;color:var(--white)}
-.proj-desc{font-size:.9rem;color:var(--txt);line-height:1.85}
-.proj-chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1.1rem}
-.chip{font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:1px;padding:.22rem .6rem;border:1px solid var(--border-acc);color:rgba(0,255,224,.65);border-radius:3px;text-transform:uppercase}
+.pcard-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,224,.05),rgba(255,77,109,.03))}
+.proj-icon-big{width:72px;height:72px;object-fit:contain;filter:brightness(0) invert(1) opacity(.15)}
+.proj-brand{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;color:rgba(255,255,255,.12);text-align:center}
+.proj-year{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:3px;color:rgba(0,255,224,.25)}
 
-/* ARSENAL */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:.8rem}
-.skill-card{background:var(--glass);border:1px solid var(--border);border-radius:10px;padding:1.3rem;transition:border-color .22s,transform .22s;opacity:0;transform:translateY(14px);position:relative;overflow:hidden}
+@media(max-width:720px){
+  .pcard{grid-template-columns:1fr}
+  .pcard-visual{display:none}
+}
+
+/* spacers to make sticky scroll work */
+.proj-spacer{height:300px}
+
+/* ── ARSENAL ── */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(172px,1fr));gap:.85rem}
+.skill-card{background:var(--glass);border:1px solid var(--border);border-radius:10px;padding:1.3rem;transition:border-color .22s,transform .22s;opacity:0;transform:translateY(14px)}
 .skill-card.visible{opacity:1;transform:none}
 .skill-card:hover{border-color:var(--border-acc);transform:translateY(-2px)}
-.sk-icon{width:30px;height:30px;margin-bottom:.7rem;display:block;flex-shrink:0}
-.sk-name{font-size:.9rem;font-weight:600;color:var(--white);letter-spacing:.3px}
-.sk-desc{font-size:.72rem;color:var(--txt);margin-top:.18rem;font-family:'Space Mono',monospace}
-.sk-bar{margin-top:.85rem;height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.sk-icon-wrap{width:36px;height:36px;margin-bottom:.8rem;display:flex;align-items:center;justify-content:center}
+.sk-icon-wrap img,.sk-icon-wrap svg{width:36px;height:36px;object-fit:contain}
+.sk-name{font-size:.95rem;font-weight:600;color:var(--white);letter-spacing:.3px}
+.sk-desc{font-size:.74rem;color:var(--txt);margin-top:.2rem;font-family:'Space Mono',monospace;line-height:1.5}
+.sk-bar{margin-top:.9rem;height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
 .sk-fill{height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));width:0;transition:width 1s ease}
 .skill-card.visible .sk-fill{width:var(--f)}
 
-/* ABOUT BENTO */
+/* ── ABOUT BENTO ── */
 .bento{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media(max-width:660px){.bento{grid-template-columns:1fr}}
-.bcard{background:var(--glass);border:1px solid var(--border);border-radius:12px;padding:1.6rem;overflow:hidden;position:relative}
-.bcard-title{font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:.2rem;display:flex;align-items:center;gap:.5rem}
+.bcard{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;overflow:hidden;position:relative;min-height:260px}
+.bcard-title{font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:.25rem;display:flex;align-items:center;gap:.5rem}
 .bcard-title svg{color:var(--acc);width:16px;height:16px;flex-shrink:0}
-.bcard-sub{font-size:.78rem;color:var(--txt);margin-bottom:1.1rem;font-family:'Space Mono',monospace;letter-spacing:.5px}
+.bcard-sub{font-size:.78rem;color:var(--txt);margin-bottom:1.2rem;font-family:'Space Mono',monospace;letter-spacing:.5px}
 
-/* MY READS — chaotic scattered icon grid */
-.reads-chaos{position:relative;min-height:180px}
+/* READS — chaotic scatter layout */
+.reads-scatter{position:relative;min-height:200px}
 .read-bubble{
-  position:absolute;display:flex;flex-direction:column;align-items:center;gap:.3rem;
-  padding:.6rem .8rem;border:1px solid var(--border);border-radius:10px;
-  text-decoration:none;color:var(--txt2);font-size:.72rem;font-family:'Space Mono',monospace;
-  letter-spacing:.5px;text-align:center;transition:all .2s;background:var(--glass2);
-  white-space:nowrap
+  position:absolute;display:flex;align-items:center;gap:.5rem;
+  padding:.45rem .9rem;border:1px solid var(--border);border-radius:999px;
+  text-decoration:none;color:var(--txt2);font-size:.82rem;font-weight:500;
+  background:var(--glass2);transition:all .22s;white-space:nowrap
 }
 .read-bubble:hover{border-color:var(--border-acc);color:var(--acc);transform:scale(1.05)}
-.read-bubble svg{width:20px;height:20px;flex-shrink:0}
-/* chaotic positions — each one different */
-.rb0{top:0;left:0;transform:rotate(-3deg)}
-.rb1{top:0;right:10px;transform:rotate(2deg);font-size:.82rem}
-.rb1 svg{width:26px;height:26px}
-.rb2{top:60px;left:30px;transform:rotate(1.5deg);font-size:.65rem}
-.rb3{top:55px;right:5px;transform:rotate(-2deg);font-size:.78rem}
-.rb3 svg{width:22px;height:22px}
-.rb4{bottom:0;left:5px;transform:rotate(-1deg);font-size:.68rem}
+.read-bubble svg{width:14px;height:14px;flex-shrink:0}
+/* sizes and positions — chaotic */
+.rb0{top:0;left:0;font-size:.95rem;font-weight:600}
+.rb1{top:10px;right:0;font-size:.74rem}
+.rb2{top:65px;left:15px;font-size:.85rem}
+.rb3{top:80px;right:20px;font-size:.78rem}
+.rb4{top:145px;left:5px;font-size:.88rem}
 
-/* TOOLBOX — two rails at bottom, icons + text */
-.toolbox-top{min-height:60px;margin-bottom:auto;padding-bottom:.8rem}
-.toolbox-top p{font-size:.82rem;color:var(--txt);line-height:1.7}
-.tool-rails{margin-top:auto;padding-top:.8rem;border-top:1px solid var(--border)}
-.tool-scroll{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.tool-track{display:flex;width:max-content;animation:mq 22s linear infinite;gap:.5rem;padding:.3rem 0}
-.tool-track2{animation-direction:reverse;animation-duration:26s}
-.tool-chip{display:flex;align-items:center;gap:.4rem;padding:.3rem .7rem;border:1px solid var(--border);border-radius:5px;font-size:.68rem;color:var(--txt2);white-space:nowrap;background:var(--glass2)}
-.tool-chip svg{width:13px;height:13px;flex-shrink:0;opacity:.7}
+/* TOOLBOX — two scrolling rows */
+.tool-scroll-wrap{margin-top:.5rem}
+.tool-scroll{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);margin-bottom:.5rem}
+.tool-track{display:flex;width:max-content;animation:mq 20s linear infinite;gap:.5rem;padding:.3rem 0;align-items:center}
+.tool-track.rev{animation-direction:reverse;animation-duration:25s}
+.tool-chip{display:flex;align-items:center;gap:.4rem;padding:.35rem .85rem;border:1px solid var(--border);border-radius:6px;font-size:.74rem;color:var(--txt2);white-space:nowrap;background:var(--glass2)}
+.tool-chip svg,.tool-chip img{width:14px;height:14px;flex-shrink:0;object-fit:contain}
 
 /* HOBBIES */
-.hobby-wrap{display:flex;flex-wrap:wrap;gap:.55rem}
-.hobby-pill{display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;border:1px solid var(--border);border-radius:999px;font-size:.82rem;color:var(--txt2);transition:all .2s}
-.hobby-pill:hover{border-color:var(--border-acc);color:var(--acc)}
-.hobby-pill svg{width:14px;height:14px;opacity:.6}
+.hobby-grid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.5rem}
+.hobby-item{display:flex;align-items:center;gap:.6rem;padding:.65rem .85rem;border:1px solid var(--border);border-radius:8px;font-size:.88rem;color:var(--txt2);transition:all .22s;background:var(--glass2)}
+.hobby-item:hover{border-color:var(--border-acc);color:var(--acc)}
+.hobby-item svg{width:16px;height:16px;color:var(--acc);flex-shrink:0;opacity:.7}
+.hobby-item:hover svg{opacity:1}
+.hobby-item-label{font-weight:500}
+.hobby-item-sub{font-size:.68rem;color:var(--txt);font-family:'Space Mono',monospace;margin-top:.05rem}
 
-/* LOCATION — Snapchat-style map card */
-.map-card{position:relative;border-radius:12px;overflow:hidden;height:160px;background:#1a2744}
-.map-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,#1e3a5f,#0a1628);overflow:hidden}
-/* Simplified map roads */
-.map-road{position:absolute;background:rgba(255,255,255,.08);border-radius:2px}
-.map-pin{position:absolute;bottom:55%;right:38%;transform:translate(50%,50%);z-index:3;display:flex;flex-direction:column;align-items:center}
-.map-pin-avatar{width:36px;height:36px;border-radius:50%;border:2px solid var(--acc);overflow:hidden;box-shadow:0 0 0 3px rgba(0,255,224,.2),0 4px 12px rgba(0,0,0,.5)}
-.map-pin-avatar img{width:100%;height:100%;object-fit:cover}
-.map-pin-tail{width:2px;height:10px;background:var(--acc);margin:0 auto}
-.map-pin-dot{width:6px;height:6px;border-radius:50%;background:var(--acc);box-shadow:0 0 6px var(--acc)}
-.map-label{position:absolute;bottom:.6rem;left:.8rem;right:.8rem;display:flex;gap:.5rem}
-.map-tag{background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);border-radius:5px;padding:.3rem .6rem;font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(255,255,255,.7);letter-spacing:1px}
-.map-tag span{color:var(--acc)}
-.loc-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.8rem}
-.loc-row{display:flex;align-items:center;gap:.7rem;padding:.6rem .8rem;border:1px solid var(--border);border-radius:7px;background:var(--glass2)}
-.loc-row svg{width:14px;height:14px;color:var(--acc);flex-shrink:0}
-.loc-label{font-size:.65rem;font-family:'Space Mono',monospace;color:var(--txt);text-transform:uppercase;letter-spacing:1px}
-.loc-val{font-size:.82rem;font-weight:500;color:var(--white)}
+/* MAP card */
+.map-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;position:relative;min-height:260px}
+.map-frame{width:100%;height:100%;min-height:260px;border:none;display:block;
+  filter:invert(1) hue-rotate(200deg) saturate(0.35) brightness(0.75)}
+.map-overlay{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(8,13,26,.3),transparent 40%,transparent 60%,rgba(8,13,26,.4))}
+.map-label{position:absolute;top:1rem;left:1rem;font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:3px;color:var(--acc);text-transform:uppercase;background:rgba(8,13,26,.7);padding:.3rem .7rem;border-radius:4px;border:1px solid var(--border-acc)}
+.map-pin{position:absolute;bottom:35%;left:52%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:.3rem;animation:floatY 3s ease-in-out infinite}
+.map-pin-avatar{width:44px;height:44px;border-radius:50%;border:2px solid var(--acc);background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 0 16px rgba(0,255,224,.4)}
+.map-pin-tail{width:2px;height:14px;background:var(--acc);border-radius:2px}
+.map-pin-dot{width:6px;height:6px;background:var(--acc);border-radius:50%;box-shadow:0 0 8px var(--acc)}
 
-/* NOW */
-.now-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
-@media(max-width:600px){.now-grid{grid-template-columns:1fr}}
-.now-box{background:var(--glass);border:1px solid var(--border);border-radius:10px;padding:2rem;position:relative}
-.live-badge{display:inline-flex;align-items:center;gap:.45rem;padding:.3rem .75rem;border:1px solid rgba(255,77,109,.3);border-radius:999px;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:2px;color:var(--acc2);margin-bottom:1rem}
+/* ── NOW ── */
+.now-box{background:var(--glass);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;position:relative}
+.live-badge{display:inline-flex;align-items:center;gap:.45rem;padding:.28rem .72rem;border:1px solid rgba(255,77,109,.3);border-radius:999px;font-family:'Space Mono',monospace;font-size:.57rem;letter-spacing:2px;color:var(--acc2);margin-bottom:1rem}
 .live-dot2{width:6px;height:6px;border-radius:50%;background:var(--acc2);animation:ping2 1.5s infinite}
 @keyframes ping2{0%{box-shadow:0 0 0 0 rgba(255,77,109,.6)}70%{box-shadow:0 0 0 6px rgba(255,77,109,0)}100%{box-shadow:0 0 0 0 rgba(255,77,109,0)}}
-.now-box p{font-size:.92rem;color:var(--txt);line-height:1.85}
+.now-box p{font-size:.97rem;color:var(--txt);line-height:1.9}
 .now-box strong{color:var(--white);font-weight:600}
-.np-card{background:var(--glass2);border:1px solid var(--border);border-radius:8px;padding:1.2rem;position:relative}
-.np-label{font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:2px;color:var(--acc);text-transform:uppercase;margin-bottom:.4rem}
-.np-title{font-size:.95rem;font-weight:600;color:var(--white);margin-bottom:.35rem}
-.np-desc{font-size:.8rem;color:var(--txt);line-height:1.65}
-/* status badge top-right of np-card */
-.np-status{position:absolute;top:.75rem;right:.75rem;display:inline-flex;align-items:center;gap:.35rem;padding:.2rem .55rem;border-radius:999px;font-family:'Space Mono',monospace;font-size:.5rem;letter-spacing:1px}
-.np-status.green{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#22c55e}
-.np-status.yellow{background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);color:#facc15}
-.np-status-dot{width:5px;height:5px;border-radius:50%}
+.now-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+@media(max-width:600px){.now-grid{grid-template-columns:1fr}}
+.np-card{background:var(--glass2);border:1px solid var(--border);border-radius:8px;padding:1.3rem;position:relative}
+.np-status{position:absolute;top:.9rem;right:.9rem;display:flex;align-items:center;gap:.35rem;font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:1.5px;padding:.22rem .6rem;border-radius:999px}
+.np-status.green{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#22c55e}
+.np-status.yellow{background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.25);color:#eab308}
+.np-status-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
 .np-status.green .np-status-dot{background:#22c55e;animation:ping 2s infinite}
-.np-status.yellow .np-status-dot{background:#facc15}
+.np-status.yellow .np-status-dot{background:#eab308}
+.np-label{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:2px;color:var(--acc);text-transform:uppercase;margin-bottom:.4rem}
+.np-title{font-size:1rem;font-weight:600;color:var(--white);margin-bottom:.35rem;padding-right:4rem}
+.np-desc{font-size:.83rem;color:var(--txt);line-height:1.68}
 
-/* FAQ */
+/* ── FAQ ── */
 .faq-list{display:flex;flex-direction:column;gap:.6rem}
 .faq-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--glass)}
-.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.4rem;background:none;border:none;color:var(--white);font-family:'Inter',sans-serif;font-size:.95rem;font-weight:500;cursor:pointer;text-align:left;gap:1rem;transition:background .18s}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.15rem 1.5rem;background:none;border:none;color:var(--white);font-family:'Inter',sans-serif;font-size:1rem;font-weight:500;cursor:pointer;text-align:left;gap:1rem;transition:background .18s}
 .faq-q:hover{background:var(--glass2)}
-.faq-icon{flex-shrink:0;width:20px;height:20px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .28s,background .2s,border-color .2s;color:var(--acc);font-size:.7rem}
+.faq-icon{flex-shrink:0;width:22px;height:22px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .28s,background .2s,border-color .2s;color:var(--acc);font-size:.75rem;font-weight:700}
 .faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(0,255,224,.1);border-color:var(--border-acc)}
 .faq-body{max-height:0;overflow:hidden;transition:max-height .32s ease}
-.faq-body p{padding:0 1.4rem 1.1rem;font-size:.88rem;color:var(--txt);line-height:1.85}
-.faq-item.open .faq-body{max-height:300px}
+.faq-body p{padding:0 1.5rem 1.2rem;font-size:.95rem;color:var(--txt);line-height:1.88}
+.faq-item.open .faq-body{max-height:320px}
 
-/* DREAM */
-.dream{text-align:center;padding:4.5rem 1rem}
-.dream-icon{font-size:3rem;display:block;margin-bottom:1rem;animation:floatY 5s ease-in-out infinite}
+/* ── DREAM ── */
+.dream{text-align:center;padding:5rem 1rem}
+.dream-icon{font-size:3.2rem;display:block;margin-bottom:1.1rem;animation:floatY 5s ease-in-out infinite}
 .dream-txt{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:3px;line-height:1.2;max-width:680px;margin:0 auto;color:var(--white)}
 .dream-txt span{color:var(--acc3)}
-.dream-sub{margin-top:.8rem;font-size:.72rem;color:var(--txt);font-family:'Space Mono',monospace;letter-spacing:2px}
+.dream-sub{margin-top:.9rem;font-size:.76rem;color:var(--txt);font-family:'Space Mono',monospace;letter-spacing:2px}
 
-/* CONNECT */
-.connect-card{background:linear-gradient(135deg,rgba(0,255,224,.07) 0%,rgba(255,77,109,.04) 100%);border:1px solid var(--border-acc);border-radius:16px;padding:3rem 2.5rem;text-align:center;position:relative;overflow:hidden}
-.connect-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,5.5rem);letter-spacing:4px;line-height:.9;color:var(--white);margin-bottom:.6rem}
+/* ── CONNECT ── */
+.connect-card{background:linear-gradient(135deg,rgba(0,255,224,.06) 0%,rgba(255,77,109,.03) 100%);border:1px solid var(--border-acc);border-radius:18px;padding:3.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.connect-card::before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;bottom:-1px;border-radius:18px;background:linear-gradient(135deg,rgba(0,255,224,.15),transparent 50%,rgba(255,77,109,.08));z-index:-1;pointer-events:none}
+.connect-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,7vw,5.5rem);letter-spacing:4px;line-height:.9;color:var(--white);margin-bottom:.7rem}
 .connect-heading span{color:var(--acc)}
-.connect-sub2{font-size:.78rem;font-family:'Space Mono',monospace;color:var(--txt);letter-spacing:2px;margin-bottom:1.5rem}
-.connect-btn-wrap{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap}
-.con-btn{display:inline-flex;align-items:center;gap:.55rem;padding:.65rem 1.3rem;border:1px solid var(--border);border-radius:7px;color:var(--txt2);font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:1.5px;text-decoration:none;text-transform:uppercase;transition:all .2s;position:relative;overflow:hidden;background:var(--glass)}
+.connect-sub2{font-size:.82rem;font-family:'Space Mono',monospace;color:var(--txt);letter-spacing:2px;margin-bottom:1.8rem}
+.connect-btns{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap}
+.con-btn{display:inline-flex;align-items:center;gap:.55rem;padding:.7rem 1.4rem;border:1px solid var(--border);border-radius:8px;color:var(--txt2);font-family:'Space Mono',monospace;font-size:.63rem;letter-spacing:1.5px;text-decoration:none;text-transform:uppercase;transition:all .2s;position:relative;overflow:hidden;background:var(--glass)}
 .con-btn::before{content:'';position:absolute;inset:0;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .2s;z-index:-1}
-.con-btn:hover{color:#0a0f1e;border-color:var(--acc)}
+.con-btn:hover{color:#080d1a;border-color:var(--acc)}
 .con-btn:hover::before{transform:scaleX(1)}
-.con-btn.wa{border-color:rgba(37,211,102,.2);color:rgba(37,211,102,.7)}
+.con-btn.wa{border-color:rgba(37,211,102,.22);color:rgba(37,211,102,.75)}
 .con-btn.wa::before{background:#25d366}
 .con-btn.wa:hover{color:#000;border-color:#25d366}
-.con-btn.mail{border-color:rgba(0,255,224,.25);color:var(--acc)}
+.con-btn.mail{border-color:rgba(0,255,224,.28);color:var(--acc)}
 .con-btn svg{width:13px;height:13px;flex-shrink:0}
+.social-row{display:flex;justify-content:center;gap:.55rem;margin-top:1.5rem;flex-wrap:wrap}
 
-/* FOOTER */
+/* ── FOOTER ── */
 footer{border-top:1px solid var(--border);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
-.foot-left{font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:2px;color:rgba(255,255,255,.2);text-transform:uppercase}
+.foot-left{font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:2px;color:rgba(255,255,255,.18);text-transform:uppercase}
 .foot-left span{color:var(--acc)}
 .foot-right{display:flex;gap:.6rem}
-.foot-link{display:flex;align-items:center;gap:.3rem;font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:1px;color:rgba(255,255,255,.3);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.foot-link{display:flex;align-items:center;gap:.35rem;font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:1px;color:rgba(255,255,255,.28);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .foot-link:hover{color:var(--acc)}
-.foot-link svg{width:11px;height:11px}
-@media(max-width:560px){.section{padding:3.5rem 1rem}.skills-grid{grid-template-columns:1fr 1fr}footer{flex-direction:column;text-align:center}}
+.foot-link svg{width:12px;height:12px}
+
+@media(max-width:560px){.section{padding:3.5rem 1rem}.skills-grid{grid-template-columns:1fr 1fr}footer{flex-direction:column;text-align:center}.pcard{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
 <canvas id="sf"></canvas>
 <div class="cur" id="cur"></div>
 <div class="cur-r" id="curR"></div>
 
-<!-- NAV -->
+<!-- NAV — pill style, no logo -->
 <nav>
-  <div class="nav-logo">FAHAD</div>
   <ul class="nav-links">
     <li><a href="#hero"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a></li>
     <li><a href="#projects"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Projects</a></li>
@@ -279,361 +328,426 @@ footer{border-top:1px solid var(--border);padding:1.5rem 2rem;display:flex;align
   <div class="hero-glow"></div>
   <div class="photo-wrap">
     <div class="pr1"></div><div class="pr2"></div><div class="pdot"></div>
-    <img src="1709953883692.png" alt="Fahad" loading="eager" decoding="async">
+    <img src="1709953883692.png" alt="Fahad aka Mr. Brown" loading="eager" decoding="async">
   </div>
   <p class="hero-tag">// Self-Made Digital Operator</p>
   <h1 class="hero-name glitch" data-text="FAHAD">FAHAD</h1>
   <div class="tw-wrap"><span class="tw-prefix">&gt;&nbsp;</span><span id="tw"></span></div>
   <div class="avail-badge"><span class="avail-dot"></span>Open to collaborations &amp; freelance work</div>
   <div class="hero-cta">
-    <a href="#projects" class="btn btn-p" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'});return false;">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    <button class="btn btn-p" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
       See My Work
-    </a>
-    <a href="#connect" class="btn btn-s" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'});return false;">
-      👋 Let's Connect
-    </a>
+    </button>
+    <button class="btn btn-s" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">👋 Let's Connect</button>
   </div>
   <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
-<!-- PROJECTS — oldest first, newest last, all same big card style -->
-<div class="section" id="projects">
-  <p class="sec-eyebrow">Real Work</p>
-  <h2 class="sec-title">PROJECTS &amp; <span style="color:var(--acc)">EXPERIENCE</span></h2>
-  <p class="sec-sub">Built, shipped, operated — with raw hands and no blueprint.</p>
-
-  <div class="proj-stack">
-
-    <!-- 1. OLDEST: Light Line 2019 -->
-    <div class="proj-big">
-      <div class="proj-big-body">
-        <div class="proj-tag">2019 – 2021 · Gujranwala</div>
-        <div class="proj-title">Light Line Laser Marking</div>
-        <p class="proj-desc">My first real digital battleground. Operated Fiber, YAG & CO2 laser machines. Designed artwork for 6+ international Sialkot sports & clothing brands shipping globally. Built the entire graphic workflow from scratch with zero prior training.</p>
-        <div class="proj-chips"><span class="chip">CO2 Laser</span><span class="chip">Fiber Laser</span><span class="chip">YAG Laser</span><span class="chip">Graphic Design</span><span class="chip">CorelDraw</span><span class="chip">EzCad</span></div>
-      </div>
-      <div class="proj-big-visual">⚡</div>
-    </div>
-
-    <!-- 2. Afzal Laser 2020 -->
-    <div class="proj-big">
-      <div class="proj-big-body">
-        <div class="proj-tag">2020 · Sialkot</div>
-        <div class="proj-title">Afzal Laser — Sialkot</div>
-        <p class="proj-desc">Sent to Sialkot to master advanced laser operations. Ran a full customised gifts operation — designing, cutting, assembling, and dispatching every order solo. Graphic design for well-known international sports & clothing brands.</p>
-        <div class="proj-chips"><span class="chip">Video Editing</span><span class="chip">Marketing</span><span class="chip">Product Design</span><span class="chip">Operations</span><span class="chip">Dispatch</span><span class="chip">CorelDraw</span></div>
-      </div>
-      <div class="proj-big-visual">🎁</div>
-    </div>
-
-    <!-- 3. Affiliate Marketing 2022 -->
-    <div class="proj-big">
-      <div class="proj-big-body">
-        <div class="proj-tag">2022 · Remote / Self-Funded</div>
-        <div class="proj-title">Affiliate Marketing Attempt</div>
-        <p class="proj-desc">Built a full affiliate marketing blog on Google Blogspot. Taught myself SEO, content writing, digital marketing — entirely from YouTube and online articles. No budget. No mentor. Tried Forex too. Paid tuition via real losses.</p>
-        <div class="proj-chips"><span class="chip">SEO</span><span class="chip">Blogging</span><span class="chip">Content Writing</span><span class="chip">Social Media</span><span class="chip">Forex</span><span class="chip">Self-Taught</span></div>
-      </div>
-      <div class="proj-big-visual">📈</div>
-    </div>
-
-    <!-- 4. G City Health 2024 — NEWEST -->
-    <div class="proj-big">
-      <div class="proj-big-body">
-        <div class="proj-tag">2024 – Present · Islamabad</div>
-        <div class="proj-title">G City Health — Herbal Brand</div>
-        <p class="proj-desc">Running the entire digital operation single-handedly — social media strategy, content creation, graphic design, marketing, and AI agent management (OpenClaw). Full ownership. No team. No handholding. Results driven by instinct and hustle.</p>
-        <div class="proj-chips"><span class="chip">Social Media</span><span class="chip">Content</span><span class="chip">Canva</span><span class="chip">Google Workspace</span><span class="chip">AI Agents</span><span class="chip">OpenClaw</span></div>
-      </div>
-      <div class="proj-big-visual">🌿</div>
-    </div>
-
-    <!-- 5. Custom Attack Toolkit 2025 — MOST RECENT -->
-    <div class="proj-big">
-      <div class="proj-big-body">
-        <div class="proj-tag">2025 – Present · Personal</div>
-        <div class="proj-title">Custom Attack Toolkit</div>
-        <p class="proj-desc">Building a personal Kali Linux environment for offensive security — recon tools, vulnerability scanning, custom scripts. No course. Just documentation, forums, failure, and repetition. The lab never closes.</p>
-        <div class="proj-chips"><span class="chip">Kali Linux</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">Networking</span><span class="chip">Bug Bounty</span><span class="chip">Recon</span></div>
-      </div>
-      <div class="proj-big-visual">💀</div>
-    </div>
-
-  </div>
-</div>
-
-<!-- MARQUEE — between Projects & Arsenal -->
+<!-- MARQUEE BAND -->
 <div class="marquee-outer">
   <div class="marquee-wrap">
     <div class="marquee-track" id="mq"></div>
   </div>
 </div>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <p class="sec-eyebrow">Real Work</p>
+  <h2 class="sec-title">PROJECTS &amp; <span style="color:var(--acc)">EXPERIENCE</span></h2>
+  <p class="sec-sub">Built, shipped, and operated — with raw hands and zero blueprint.</p>
+
+  <div style="display:flex;flex-direction:column;gap:1.2rem">
+
+    <!-- Card 1 — oldest -->
+    <div class="pcard" style="top:calc(62px + 1rem)">
+      <div class="pcard-body">
+        <div class="pcard-top">
+          <div class="pcard-tag">2019 – 2021 · Gujranwala</div>
+          <div class="pcard-title">Light Line Laser Marking</div>
+          <p class="pcard-desc">My first real digital battleground. Operated Fiber, YAG & CO2 laser machines. Designed artwork for 6+ international Sialkot sports & clothing brands shipping globally. Built the entire graphic workflow from scratch — zero prior training, pure obsession.</p>
+        </div>
+        <div class="pcard-chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>CO2 Laser</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2v8.5a2.5 2.5 0 0 1-5 0V2"/></svg>Fiber Laser</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>CorelDraw</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>EzCad</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Graphic Design</span>
+        </div>
+      </div>
+      <div class="pcard-visual">
+        <div class="proj-brand">LIGHT LINE<br>LASER MARKING</div>
+        <div class="proj-year">2019 — 2021</div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="pcard" style="top:calc(62px + 2.5rem)">
+      <div class="pcard-body">
+        <div class="pcard-top">
+          <div class="pcard-tag">2020 · Sialkot</div>
+          <div class="pcard-title">Afzal Laser — Sialkot</div>
+          <p class="pcard-desc">Sent to Sialkot to master advanced laser operations. Handled graphic design for well-known international sports & clothing brands. Ran a full customised gifts operation — designing, cutting, assembling, and dispatching every single order, solo.</p>
+        </div>
+        <div class="pcard-chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z"/></svg>Video Editing</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Marketing</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Operations</span>
+        </div>
+      </div>
+      <div class="pcard-visual">
+        <div class="proj-brand">AFZAL<br>LASER</div>
+        <div class="proj-year">2020 — SIALKOT</div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="pcard" style="top:calc(62px + 4rem)">
+      <div class="pcard-body">
+        <div class="pcard-top">
+          <div class="pcard-tag">2022 · Remote / Self-Funded</div>
+          <div class="pcard-title">Affiliate Marketing Attempt</div>
+          <p class="pcard-desc">Built a complete affiliate marketing setup on Google Blogspot — SEO, content, social media strategy — entirely self-taught from YouTube and online articles. No budget. No mentor. Also explored Forex trading. Paid full tuition via real losses. Every failure was a data point.</p>
+        </div>
+        <div class="pcard-chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>SEO</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Content Writing</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Forex</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>Social Media</span>
+        </div>
+      </div>
+      <div class="pcard-visual">
+        <div class="proj-brand">AFFILIATE<br>MARKETING</div>
+        <div class="proj-year">2022 — SELF-TAUGHT</div>
+      </div>
+    </div>
+
+    <!-- Card 4 — current -->
+    <div class="pcard" style="top:calc(62px + 5.5rem)">
+      <div class="pcard-body">
+        <div class="pcard-top">
+          <div class="pcard-tag">2024 – Present · Islamabad</div>
+          <div class="pcard-title">Herbal Brand — Full Digital Ops</div>
+          <p class="pcard-desc">Running the entire digital operation single-handedly — social media strategy, content creation, graphic design, marketing, and AI agent management. Full ownership, no team, no handholding. Results driven by instinct and hustle, with 5+ months of consistent delivery.</p>
+        </div>
+        <div class="pcard-chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>Social Media</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>AI Agents</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Graphic Design</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Content</span>
+        </div>
+      </div>
+      <div class="pcard-visual">
+        <div class="proj-brand">HERBAL<br>BRAND</div>
+        <div class="proj-year">2024 — PRESENT</div>
+      </div>
+    </div>
+
+    <!-- Card 5 — newest -->
+    <div class="pcard" style="top:calc(62px + 7rem)">
+      <div class="pcard-body">
+        <div class="pcard-top">
+          <div class="pcard-tag">2025 – Present · Personal</div>
+          <div class="pcard-title">Custom Offensive Security Toolkit</div>
+          <p class="pcard-desc">Building a personal Kali Linux environment for offensive security research — custom recon scripts, vulnerability scanning workflows, and a structured bug bounty methodology. No course, no teacher. Pure self-teaching through documentation, CTF challenges, and deliberate failure.</p>
+        </div>
+        <div class="pcard-chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Kali Linux</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Python</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6l11 6 11-6M1 6v12l11 6 11-6V6"/></svg>Bug Bounty</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 0 0-6 0zm-4-4l2 2a7.074 7.074 0 0 1 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>Networking</span>
+        </div>
+      </div>
+      <div class="pcard-visual">
+        <div class="proj-brand">OFFENSIVE<br>SECURITY</div>
+        <div class="proj-year">2025 — ONGOING</div>
+      </div>
+    </div>
+
+  </div><!-- end cards -->
+  <!-- spacer to allow scroll stacking to work properly -->
+  <div style="height:40px"></div>
+</div>
+
+<!-- MARQUEE 2 — between projects and arsenal -->
+<div class="marquee-outer" style="transform:rotate(2deg) translateY(4px);margin-top:-8px">
+  <div class="marquee-wrap">
+    <div class="marquee-track" style="animation-direction:reverse;animation-duration:26s" id="mq2"></div>
+  </div>
+</div>
+
 <div class="divider"></div>
 
 <!-- ARSENAL -->
 <div class="section" id="arsenal">
   <p class="sec-eyebrow">Toolkit</p>
   <h2 class="sec-title">MY <span style="color:var(--acc)">ARSENAL</span></h2>
-  <p class="sec-sub">Skills acquired in the field — no classroom, no shortcuts.</p>
+  <p class="sec-sub">Skills forged in the field. No classroom. No shortcuts.</p>
   <div class="skills-grid">
 
-    <!-- Digital Marketing — megaphone/bullhorn icon -->
     <div class="skill-card" style="--f:88%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
-      <div class="sk-name">Digital Marketing</div><div class="sk-desc">In-field / self-taught</div>
+      <div class="sk-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" width="36" height="36"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div class="sk-name">Digital Marketing</div><div class="sk-desc">SEO · Campaigns · Growth</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Social Media — share/network icon -->
     <div class="skill-card" style="--f:86%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      <div class="sk-icon-wrap"><svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36" style="color:var(--acc)"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></div>
       <div class="sk-name">Social Media</div><div class="sk-desc">Strategy & execution</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Graphic Design — pen tool / bezier -->
-    <div class="skill-card" style="--f:83%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-      <div class="sk-name">Graphic Design</div><div class="sk-desc">CorelDraw · Illustrator · PS</div>
+    <div class="skill-card" style="--f:84%">
+      <div class="sk-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" width="36" height="36"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+      <div class="sk-name">Graphic Design</div><div class="sk-desc">CorelDraw · Illustrator · Photoshop</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Video Editing — film/clapperboard -->
-    <div class="skill-card" style="--f:78%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20M7 2l3 4M17 2l-3 4"/></svg>
-      <div class="sk-name">Video Editing</div><div class="sk-desc">Content creation</div>
+    <div class="skill-card" style="--f:79%">
+      <div class="sk-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" width="36" height="36"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <div class="sk-name">Video Editing</div><div class="sk-desc">Content creation & production</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Kali Linux — terminal skull -->
-    <div class="skill-card" style="--f:63%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="8 9 12 5 16 9"/><line x1="12" y1="5" x2="12" y2="19"/></svg>
-      <div class="sk-name">Kali Linux</div><div class="sk-desc">Offensive sec — self-learning</div>
-      <div class="sk-bar"><div class="sk-fill"></div></div>
-    </div>
-
-    <!-- Bug Bounty — magnifying glass + bug -->
-    <div class="skill-card" style="--f:55%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      <div class="sk-name">Bug Bounty</div><div class="sk-desc">Hunting in progress</div>
-      <div class="sk-bar"><div class="sk-fill"></div></div>
-    </div>
-
-    <!-- Laser Operations — beam/zap icon -->
-    <div class="skill-card" style="--f:80%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    <div class="skill-card" style="--f:81%">
+      <div class="sk-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" width="36" height="36"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
       <div class="sk-name">Laser Operations</div><div class="sk-desc">CO2 · Fiber · YAG · EzCad</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Networking — server/wifi -->
-    <div class="skill-card" style="--f:52%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-      <div class="sk-name">Networking</div><div class="sk-desc">Fundamentals — self-taught</div>
+    <div class="skill-card" style="--f:64%">
+      <div class="sk-icon-wrap">
+        <!-- Official Kali Linux Dragon icon -->
+        <svg viewBox="0 0 24 24" width="36" height="36" fill="var(--acc)" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.041 2C9.08 2 6.459 3.377 4.747 5.543L7.1 7.896c.28-.392.593-.76.933-1.1L6.285 5.05c1.453-1.614 3.538-2.63 5.856-2.63.424 0 .84.033 1.246.097L13.03 2.04A10.04 10.04 0 0 0 12.041 2zm3.486.752l-.518 1.847a7.98 7.98 0 0 1 3.21 2.565l1.56-1.235A9.967 9.967 0 0 0 15.527 2.752zM3.523 6.72A9.961 9.961 0 0 0 2 12.04c0 .536.043 1.063.125 1.576l1.888-.303A8.024 8.024 0 0 1 3.9 12.04c0-1.31.317-2.547.876-3.635L3.523 6.72zm16.624.078l-1.437 1.284a8.01 8.01 0 0 1 .956 3.958c0 .442-.036.876-.105 1.298l1.888.303c.082-.513.126-1.04.126-1.576 0-1.86-.49-3.609-1.348-5.117l-.08-.15zM4.523 15.32a9.978 9.978 0 0 0 3.23 4.37l1.19-1.504a8.006 8.006 0 0 1-2.553-3.472l-1.867.606zm14.996.046l-1.865-.607a8.005 8.005 0 0 1-2.515 3.437l1.183 1.51a9.978 9.978 0 0 0 3.197-4.34zM8.987 20.77A9.975 9.975 0 0 0 12.04 22c1.07 0 2.1-.168 3.066-.48l-.602-1.867a8.01 8.01 0 0 1-2.464.387 8.01 8.01 0 0 1-2.45-.376l-.603 1.107z"/>
+          <path d="M12 6a6 6 0 1 0 0 12A6 6 0 0 0 12 6zm0 1.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm-1 2v1h-.5a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H11v1h2v-1h.5a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H13V9.5h-2z"/>
+        </svg>
+      </div>
+      <div class="sk-name">Kali Linux</div><div class="sk-desc">Offensive security — self-taught</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Python/Node — code brackets -->
-    <div class="skill-card" style="--f:47%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-      <div class="sk-name">Python / Node.js</div><div class="sk-desc">Basic — always learning</div>
+    <div class="skill-card" style="--f:56%">
+      <div class="sk-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" width="36" height="36"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="sk-name">Bug Bounty</div><div class="sk-desc">Recon · Hunting · Reporting</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Google Workspace — grid/apps icon -->
-    <div class="skill-card" style="--f:85%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    <div class="skill-card" style="--f:53%">
+      <div class="sk-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" width="36" height="36"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+      <div class="sk-name">Networking</div><div class="sk-desc">TCP/IP · Protocols · Recon</div>
+      <div class="sk-bar"><div class="sk-fill"></div></div>
+    </div>
+
+    <div class="skill-card" style="--f:48%">
+      <div class="sk-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" width="36" height="36"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+      <div class="sk-name">Python / Node.js</div><div class="sk-desc">Scripting & automation</div>
+      <div class="sk-bar"><div class="sk-fill"></div></div>
+    </div>
+
+    <div class="skill-card" style="--f:86%">
+      <div class="sk-icon-wrap">
+        <!-- Google G icon -->
+        <svg viewBox="0 0 24 24" width="36" height="36" fill="var(--acc)"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      </div>
       <div class="sk-name">Google Workspace</div><div class="sk-desc">Drive · Analytics · Ads · Gemini</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Shopify — shopping bag -->
-    <div class="skill-card" style="--f:60%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-      <div class="sk-name">Shopify</div><div class="sk-desc">E-commerce ops</div>
+    <div class="skill-card" style="--f:61%">
+      <div class="sk-icon-wrap">
+        <!-- Shopify bag icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" width="36" height="36"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </div>
+      <div class="sk-name">Shopify</div><div class="sk-desc">E-commerce operations</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Git & GitHub — branch icon -->
-    <div class="skill-card" style="--f:56%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
-      <div class="sk-name">Git & GitHub</div><div class="sk-desc">Version control</div>
+    <div class="skill-card" style="--f:57%">
+      <div class="sk-icon-wrap">
+        <!-- GitHub octocat simplified -->
+        <svg viewBox="0 0 24 24" fill="var(--acc)" width="36" height="36"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      </div>
+      <div class="sk-name">Git &amp; GitHub</div><div class="sk-desc">Version control</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Debugging — bug icon -->
-    <div class="skill-card" style="--f:70%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><path d="M8 2h8l1 4H7L8 2z"/><path d="M7 6v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/><line x1="12" y1="10" x2="12" y2="16"/><line x1="9" y1="13" x2="15" y2="13"/><path d="M5 10H3M21 10h-2M5 18H2M22 18h-3"/></svg>
+    <div class="skill-card" style="--f:72%">
+      <div class="sk-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" width="36" height="36"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v3l2 2"/></svg></div>
       <div class="sk-name">Debugging</div><div class="sk-desc">Every error is a teacher</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
-    <!-- Self-Learning — brain/lightbulb -->
     <div class="skill-card" style="--f:96%">
-      <svg class="sk-icon" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+      <div class="sk-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="1.5" width="36" height="36"><path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
       <div class="sk-name">Self-Learning</div><div class="sk-desc">My actual superpower</div>
       <div class="sk-bar"><div class="sk-fill"></div></div>
     </div>
 
   </div>
 </div>
+
 <div class="divider"></div>
 
 <!-- ABOUT -->
 <div class="section" id="about">
   <p class="sec-eyebrow">The Human</p>
   <h2 class="sec-title">A GLIMPSE INTO <span style="color:var(--acc)">MY WORLD</span></h2>
-  <p class="sec-sub">Learn more about who I am, what I read, and what keeps me going.</p>
+  <p class="sec-sub">Who I am beyond the skills — what I read, how I think, where I live.</p>
 
   <div class="bento">
-    <!-- MY READS — chaotic scattered bubbles -->
+
+    <!-- MY READS — chaotic scatter -->
     <div class="bcard reveal">
       <div class="bcard-title">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         My Reads
       </div>
       <div class="bcard-sub">Where I get my information fix</div>
-      <div class="reads-chaos">
+      <div class="reads-scatter">
         <a class="read-bubble rb0" href="https://medium.com/@fahadrajpoot_60832" target="_blank" rel="noopener">
-          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+          <svg fill="currentColor" width="16" height="16" viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
           Medium
         </a>
-        <a class="read-bubble rb1" href="https://arstechnica.com" target="_blank" rel="noopener">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          Ars Technica
-        </a>
-        <a class="read-bubble rb2" href="https://www.reddit.com/user/BROWN9990/" target="_blank" rel="noopener">
-          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .379-.239l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+        <a class="read-bubble rb1" href="https://www.reddit.com/user/BROWN9990/" target="_blank" rel="noopener">
+          <svg fill="currentColor" width="14" height="14" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .379-.239l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
           Reddit
         </a>
-        <a class="read-bubble rb3" href="https://x.com/MrBROWN9990" target="_blank" rel="noopener">
-          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <a class="read-bubble rb2" href="https://x.com/MrBROWN9990" target="_blank" rel="noopener">
+          <svg fill="currentColor" width="15" height="15" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           X / Twitter
         </a>
-        <a class="read-bubble rb4" href="https://www.theverge.com" target="_blank" rel="noopener">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <a class="read-bubble rb3" href="https://www.theverge.com" target="_blank" rel="noopener">
+          <svg fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           The Verge
+        </a>
+        <a class="read-bubble rb4" href="https://arstechnica.com" target="_blank" rel="noopener">
+          <svg fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Ars Technica
         </a>
       </div>
     </div>
 
-    <!-- MY TOOLBOX — description top, two scrolling rails at bottom -->
-    <div class="bcard reveal" style="display:flex;flex-direction:column;min-height:280px">
+    <!-- MY TOOLBOX — two scrolling rows with icons, filling the card -->
+    <div class="bcard reveal" style="display:flex;flex-direction:column">
       <div class="bcard-title">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         My Toolbox
       </div>
       <div class="bcard-sub">Tools I use to get things done</div>
-      <div class="toolbox-top">
-        <p>From design to ops to hacking — every tool I've touched in the field. No official training. All self-deployed.</p>
-      </div>
-      <div class="tool-rails">
-        <div class="tool-scroll" style="margin-bottom:.4rem">
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:.5rem;margin-top:.5rem">
+        <div class="tool-scroll">
           <div class="tool-track" id="tt1"></div>
         </div>
         <div class="tool-scroll">
-          <div class="tool-track tool-track2" id="tt2"></div>
+          <div class="tool-track rev" id="tt2"></div>
+        </div>
+        <div class="tool-scroll">
+          <div class="tool-track" id="tt3"></div>
         </div>
       </div>
     </div>
 
-    <!-- BEYOND THE INTERNET -->
+    <!-- BEYOND WORK -->
     <div class="bcard reveal">
       <div class="bcard-title">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        Beyond the Internet
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Beyond Work
       </div>
       <div class="bcard-sub">Life outside the screen</div>
-      <div class="hobby-wrap">
-        <span class="hobby-pill"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/></svg>Football</span>
-        <span class="hobby-pill"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Reading</span>
-        <span class="hobby-pill"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Gaming</span>
-        <span class="hobby-pill"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><polyline points="5 12 12 5 19 12"/><polyline points="5 19 12 12 19 19"/></svg>Running</span>
-        <span class="hobby-pill"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>Traveling</span>
-        <span class="hobby-pill"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>Cooking</span>
+      <div class="hobby-grid">
+        <div class="hobby-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <div><div class="hobby-item-label">Football</div><div class="hobby-item-sub">Weekend ritual</div></div>
+        </div>
+        <div class="hobby-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <div><div class="hobby-item-label">Reading</div><div class="hobby-item-sub">Tech & self-growth</div></div>
+        </div>
+        <div class="hobby-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <div><div class="hobby-item-label">Gaming</div><div class="hobby-item-sub">Where it all started</div></div>
+        </div>
+        <div class="hobby-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          <div><div class="hobby-item-label">Traveling</div><div class="hobby-item-sub">Always exploring</div></div>
+        </div>
+        <div class="hobby-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2v8.5a2.5 2.5 0 0 1-5 0V2"/><line x1="2" y1="7" x2="22" y2="7"/></svg>
+          <div><div class="hobby-item-label">Running</div><div class="hobby-item-sub">Clears the mind</div></div>
+        </div>
+        <div class="hobby-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <div><div class="hobby-item-label">Cooking</div><div class="hobby-item-sub">Therapy in a pan</div></div>
+        </div>
       </div>
     </div>
 
-    <!-- LOCATION — Snapchat-style map -->
-    <div class="bcard reveal">
-      <div class="bcard-title">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Current Location
-      </div>
-      <div class="bcard-sub">Where I'm operating from</div>
-      <!-- Snapchat-style map -->
-      <div class="map-card">
-        <div class="map-bg">
-          <!-- Road lines to simulate map -->
-          <div class="map-road" style="width:100%;height:3px;top:40%;left:0"></div>
-          <div class="map-road" style="width:3px;height:100%;top:0;left:35%"></div>
-          <div class="map-road" style="width:3px;height:100%;top:0;left:65%"></div>
-          <div class="map-road" style="width:100%;height:2px;top:65%;left:0;opacity:.5"></div>
-          <div class="map-road" style="width:60%;height:2px;top:25%;left:20%;opacity:.4;transform:rotate(-8deg)"></div>
-          <!-- Glow spot -->
-          <div style="position:absolute;width:80px;height:80px;background:radial-gradient(circle,rgba(0,255,224,.15),transparent);border-radius:50%;top:35%;right:33%;transform:translate(50%,-50%)"></div>
-        </div>
-        <div class="map-pin">
-          <div class="map-pin-avatar">
-            <img src="https://mrbrown098.github.io/Snapchat-1040677270.jpg" alt="Fahad">
-          </div>
-          <div class="map-pin-tail"></div>
-          <div class="map-pin-dot"></div>
-        </div>
-        <div class="map-label">
-          <div class="map-tag"><span>📍</span> Islamabad, PK</div>
-          <div class="map-tag" style="color:rgba(255,255,255,.4)">Home: Gujranwala</div>
-        </div>
-      </div>
-      <div class="loc-list">
-        <div class="loc-row"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><div><div class="loc-label">Home Base</div><div class="loc-val">Gujranwala, Punjab, Pakistan</div></div></div>
-        <div class="loc-row"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><div><div class="loc-label">Current Work Location</div><div class="loc-val">Islamabad, Pakistan</div></div></div>
+    <!-- MAP — Snapchat-style live location -->
+    <div class="map-card reveal">
+      <iframe
+        class="map-frame"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=73.01,33.67,73.09,33.73&layer=mapnik"
+        loading="lazy"
+        title="Islamabad F7 location map">
+      </iframe>
+      <div class="map-overlay"></div>
+      <div class="map-label">📍 Live Location — F7, Islamabad</div>
+      <div class="map-pin">
+        <div class="map-pin-avatar">🧑🏻‍💻</div>
+        <div class="map-pin-tail"></div>
+        <div class="map-pin-dot"></div>
       </div>
     </div>
+
   </div>
 </div>
+
 <div class="divider"></div>
 
-<!-- NOW -->
+<!-- RIGHT NOW -->
 <div class="section" id="now">
   <p class="sec-eyebrow">Status</p>
   <h2 class="sec-title">RIGHT <span style="color:var(--acc)">NOW</span></h2>
   <div class="now-box reveal">
     <div class="live-badge"><span class="live-dot2"></span> Live</div>
-    <p>Running <strong>full digital operations</strong> for G City Health herbal brand from Islamabad — social media, content strategy, marketing, and AI agent management. All solo. No team. No handholding. Simultaneously going deep into <strong>Kali Linux & offensive security</strong> — no teacher, no course. Just documentation, forums, failure, and repetition. Recently got a <strong>MacBook</strong>. The next chapter is loading.</p>
+    <p>Running <strong>full digital operations</strong> for a herbal brand from Islamabad — social media, content strategy, marketing, and AI agent management. All solo. No team. No handholding. Simultaneously going deep into <strong>Kali Linux &amp; offensive security</strong> — no teacher, no course. Just documentation, forums, failure, and repetition. Recently got a <strong>MacBook</strong>. The next chapter is loading.</p>
     <div class="now-grid">
       <div class="np-card">
         <div class="np-status green"><span class="np-status-dot"></span>Running</div>
         <div class="np-label">Active Project</div>
-        <div class="np-title">G City Health — Digital Ops</div>
-        <div class="np-desc">Full brand management: social media, content, marketing & AI agent ops. Running everything single-handedly.</div>
+        <div class="np-title">Herbal Brand — Digital Ops</div>
+        <div class="np-desc">Full brand management: social media, content, marketing & AI agent ops. Running everything single-handedly, 5+ months strong.</div>
       </div>
       <div class="np-card">
         <div class="np-status yellow"><span class="np-status-dot"></span>Building</div>
         <div class="np-label">Personal Build</div>
         <div class="np-title">Custom Attack Toolkit</div>
-        <div class="np-desc">Personal Kali Linux environment for learning offensive security & bug bounty. Building in free time.</div>
+        <div class="np-desc">Personal Kali Linux environment for offensive security practice. Built during free time — always evolving.</div>
       </div>
     </div>
   </div>
 </div>
+
 <div class="divider"></div>
 
 <!-- FAQ -->
 <div class="section" id="faq">
   <p class="sec-eyebrow">Questions</p>
   <h2 class="sec-title">FREQUENTLY <span style="color:var(--acc)">ASKED</span></h2>
-  <p class="sec-sub">Common things people want to know about Fahad.</p>
+  <p class="sec-sub">The things people always want to know.</p>
   <div class="faq-list">
-    <div class="faq-item reveal"><button class="faq-q">Who is Fahad aka Mr. Brown?<span class="faq-icon">+</span></button><div class="faq-body"><p>Fahad is a self-made digital operator from Gujranwala, Punjab. No degree, no diploma — just relentless self-learning since 2013. Known online as Mr. Brown, he runs digital marketing, graphic design, video editing, social media operations, and is actively learning offensive security on Kali Linux.</p></div></div>
-    <div class="faq-item reveal"><button class="faq-q">No degree — can he actually do the work?<span class="faq-icon">+</span></button><div class="faq-body"><p>Absolutely. Everything Fahad knows was learned in the field — graphic design on a laser machine, marketing while working for real businesses, coding from documentation, and security from raw obsession. He currently manages an entire brand's digital operation solo. Results speak louder than diplomas.</p></div></div>
-    <div class="faq-item reveal"><button class="faq-q">What services can Fahad provide?<span class="faq-icon">+</span></button><div class="faq-body"><p>Digital marketing strategy, social media management, content creation, graphic design (CorelDraw, Illustrator, Photoshop, Canva), video editing, basic web setup, and AI agent management. Also available for laser design work and brand operations consulting.</p></div></div>
-    <div class="faq-item reveal"><button class="faq-q">What is he building toward in security?<span class="faq-icon">+</span></button><div class="faq-body"><p>Bug bounty hunting and ethical hacking. Currently deep in Kali Linux, learning offensive security through documentation, CTFs, and building a personal custom attack toolkit. No course — pure self-teaching. Every failure is a lesson logged.</p></div></div>
-    <div class="faq-item reveal"><button class="faq-q">Why "Mr. Brown"?<span class="faq-icon">+</span></button><div class="faq-body"><p>Mr. Brown is the internet alias Fahad created when building his affiliate marketing presence back in 2022. All his social accounts carry this name. It stuck. Now it's part of the brand — Fahad in real life, Mr. Brown on the internet.</p></div></div>
-    <div class="faq-item reveal"><button class="faq-q">Is he open to collaborations or freelance work?<span class="faq-icon">+</span></button><div class="faq-body"><p>Yes. Fahad is open to freelance projects, digital marketing collaborations, content work, and anything that challenges him to grow. Reach him via WhatsApp or email — he responds directly, no middleman, no agency fluff.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">Who is Fahad aka Mr. Brown?<span class="faq-icon">+</span></button><div class="faq-body"><p>Fahad is a self-made digital operator from Gujranwala, Punjab, Pakistan. No degree, no diploma — just relentless self-learning since 2013. Known online as Mr. Brown, he handles digital marketing, graphic design, video editing, social media, and is actively learning offensive security on Kali Linux.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">No degree — can he actually deliver results?<span class="faq-icon">+</span></button><div class="faq-body"><p>Absolutely. Everything Fahad knows was built in the field — graphic design learned on a laser machine, marketing skills from running real campaigns, coding from raw documentation. He currently manages an entire brand's digital ops solo with consistent 5-month delivery. The work speaks louder than any certificate.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">What services can Fahad provide?<span class="faq-icon">+</span></button><div class="faq-body"><p>Digital marketing strategy, social media management, content creation, graphic design (CorelDraw, Illustrator, Photoshop, Canva), video editing, basic web setup, AI agent management, and laser design work. Available for freelance projects, part-time retainers, or full digital brand management.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">What is he building toward in security?<span class="faq-icon">+</span></button><div class="faq-body"><p>Bug bounty hunting and ethical hacking. Currently learning offensive security through Kali Linux, building custom recon tools, and practising on CTF challenges. No course — pure self-teaching. The goal is to contribute to legitimate security research and eventually work in cybersecurity.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">Why "Mr. Brown"?<span class="faq-icon">+</span></button><div class="faq-body"><p>Mr. Brown is Fahad's internet alias from his affiliate marketing days in 2022. All his social accounts carry this name. It stuck — became the brand. Fahad in real life, Mr. Brown on the internet.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">How to work with Fahad?<span class="faq-icon">+</span></button><div class="faq-body"><p>Simple — reach him directly via WhatsApp or email. No agency. No middleman. You talk to Fahad, Fahad does the work. Response time is fast and the conversation is straight to the point.</p></div></div>
   </div>
 </div>
+
 <div class="divider"></div>
 
 <!-- DREAM -->
@@ -644,6 +758,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem 2rem;display:flex;align
     <p class="dream-sub">// With Allah's will — insha'Allah</p>
   </div>
 </div>
+
 <div class="divider"></div>
 
 <!-- CONNECT -->
@@ -651,7 +766,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem 2rem;display:flex;align
   <div class="connect-card reveal">
     <div class="connect-heading">LET'S CREATE<br><span>SOMETHING REAL</span></div>
     <p class="connect-sub2">// Open for collaborations · freelance · technical talk</p>
-    <div class="connect-btn-wrap">
+    <div class="connect-btns">
       <a class="con-btn mail" href="mailto:mrbrown098613@gmail.com">
         <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
         Get in Touch
@@ -662,10 +777,10 @@ footer{border-top:1px solid var(--border);padding:1.5rem 2rem;display:flex;align
       </a>
     </div>
   </div>
-  <div style="display:flex;justify-content:center;gap:.6rem;margin-top:1.5rem;flex-wrap:wrap">
-    <a class="con-btn" href="https://github.com/mrbrown098" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+  <div class="social-row">
+    <a class="con-btn" href="https://github.com/mrbrown098" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
     <a class="con-btn" href="https://medium.com/@fahadrajpoot_60832" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>Medium</a>
-    <a class="con-btn" href="https://x.com/MrBROWN9990" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X / Twitter</a>
+    <a class="con-btn" href="https://x.com/MrBROWN9990" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</a>
     <a class="con-btn" href="https://www.reddit.com/user/BROWN9990/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .379-.239l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>Reddit</a>
     <a class="con-btn" href="https://www.pinterest.com/mrbrown9990/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>Pinterest</a>
     <a class="con-btn" href="https://www.linkedin.com/in/mr-brown-a90704311/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
@@ -673,9 +788,9 @@ footer{border-top:1px solid var(--border);padding:1.5rem 2rem;display:flex;align
 </div>
 
 <footer>
-  <div class="foot-left">© 2026 <span>FAHAD</span> aka <span>MR. BROWN</span> · Built with raw hands & no degree</div>
+  <div class="foot-left">© 2026 <span>FAHAD</span> aka <span>MR. BROWN</span> · Gujranwala, Pakistan · Built with raw hands &amp; no degree</div>
   <div class="foot-right">
-    <a class="foot-link" href="https://github.com/mrbrown098" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
+    <a class="foot-link" href="https://github.com/mrbrown098" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
     <a class="foot-link" href="https://www.linkedin.com/in/mr-brown-a90704311/" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
     <a class="foot-link" href="https://x.com/MrBROWN9990" target="_blank" rel="noopener"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</a>
   </div>
@@ -690,7 +805,12 @@ if(!isMobile){
   const cur=document.getElementById('cur'),curR=document.getElementById('curR');
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY},{passive:true});
-  (function loop(){cur.style.left=mx+'px';cur.style.top=my+'px';rx+=(mx-rx)*.14;ry+=(my-ry)*.14;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(loop);})();
+  (function loop(){
+    cur.style.left=mx+'px';cur.style.top=my+'px';
+    rx+=(mx-rx)*.14;ry+=(my-ry)*.14;
+    curR.style.left=rx+'px';curR.style.top=ry+'px';
+    requestAnimationFrame(loop);
+  })();
   document.querySelectorAll('a,button').forEach(el=>{
     el.addEventListener('mouseenter',()=>{cur.style.width=cur.style.height='16px'},{passive:true});
     el.addEventListener('mouseleave',()=>{cur.style.width=cur.style.height='8px'},{passive:true});
@@ -698,85 +818,142 @@ if(!isMobile){
 }
 
 // STARFIELD
-const canvas=document.getElementById('sf'),ctx=canvas.getContext('2d');
+const canvas=document.getElementById('sf');
+const ctx=canvas.getContext('2d');
 let W,H,stars=[],shooters=[];
 const cols=['#e8f4ff','#cce0ff','#d0f0ff','#b8e8ff'];
 function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight}
 resize();
 window.addEventListener('resize',()=>{resize();buildStars()},{passive:true});
 function buildStars(){
-  const cap=isMobile?70:260,count=Math.min(Math.floor(W*H/(isMobile?9000:4000)),cap);
-  stars=Array.from({length:count},(_,i)=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.3+.2,a:Math.random(),ts:Math.random()*.014+.004,td:Math.random()>.5?1:-1,c:cols[i%4]}));
+  const cap=isMobile?65:240;
+  const count=Math.min(Math.floor(W*H/(isMobile?10000:4500)),cap);
+  stars=Array.from({length:count},(_,i)=>({
+    x:Math.random()*W,y:Math.random()*H,
+    r:Math.random()*1.3+.2,a:Math.random(),
+    ts:Math.random()*.013+.003,td:Math.random()>.5?1:-1,c:cols[i%4]
+  }));
 }
 buildStars();
-if(!isMobile)(function spawn(){shooters.push({x:Math.random()*W*.7,y:Math.random()*H*.3,len:70+Math.random()*100,spd:6+Math.random()*5,a:1,ang:Math.PI/6+Math.random()*.3});setTimeout(spawn,3500+Math.random()*6000);})();
+if(!isMobile)(function spawn(){
+  shooters.push({x:Math.random()*W*.65,y:Math.random()*H*.28,len:65+Math.random()*95,spd:5+Math.random()*5,a:1,ang:Math.PI/6+Math.random()*.3});
+  setTimeout(spawn,4000+Math.random()*7000);
+})();
 let lastT=0;
 (function draw(t){
-  if(!isMobile||(t-lastT>34)){lastT=t;ctx.clearRect(0,0,W,H);
-    for(const s of stars){s.a+=s.ts*s.td;if(s.a>=1){s.a=1;s.td=-1}else if(s.a<=.07){s.a=.07;s.td=1}ctx.globalAlpha=s.a;ctx.fillStyle=s.c;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,6.283);ctx.fill();}
+  if(!isMobile||(t-lastT>34)){
+    lastT=t;
+    ctx.clearRect(0,0,W,H);
+    for(const s of stars){
+      s.a+=s.ts*s.td;
+      if(s.a>=1){s.a=1;s.td=-1}else if(s.a<=.06){s.a=.06;s.td=1}
+      ctx.globalAlpha=s.a;ctx.fillStyle=s.c;
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,6.283);ctx.fill();
+    }
     shooters=shooters.filter(sh=>sh.a>.01);
-    for(const sh of shooters){const ex=sh.x+Math.cos(sh.ang)*sh.len,ey=sh.y+Math.sin(sh.ang)*sh.len;const g=ctx.createLinearGradient(sh.x,sh.y,ex,ey);g.addColorStop(0,'rgba(255,255,255,0)');g.addColorStop(1,`rgba(255,255,255,${sh.a})`);ctx.globalAlpha=sh.a;ctx.strokeStyle=g;ctx.lineWidth=1.1;ctx.beginPath();ctx.moveTo(sh.x,sh.y);ctx.lineTo(ex,ey);ctx.stroke();sh.x+=Math.cos(sh.ang)*sh.spd;sh.y+=Math.sin(sh.ang)*sh.spd;sh.a-=.013;}
-    ctx.globalAlpha=1;}
+    for(const sh of shooters){
+      const ex=sh.x+Math.cos(sh.ang)*sh.len,ey=sh.y+Math.sin(sh.ang)*sh.len;
+      const g=ctx.createLinearGradient(sh.x,sh.y,ex,ey);
+      g.addColorStop(0,'rgba(255,255,255,0)');g.addColorStop(1,`rgba(255,255,255,${sh.a})`);
+      ctx.globalAlpha=sh.a;ctx.strokeStyle=g;ctx.lineWidth=1.1;
+      ctx.beginPath();ctx.moveTo(sh.x,sh.y);ctx.lineTo(ex,ey);ctx.stroke();
+      sh.x+=Math.cos(sh.ang)*sh.spd;sh.y+=Math.sin(sh.ang)*sh.spd;sh.a-=.012;
+    }
+    ctx.globalAlpha=1;
+  }
   requestAnimationFrame(draw);
 })(0);
 
-// MARQUEE
-const mqItems=['Digital Marketing','Social Media','Graphic Design','Video Editing','Kali Linux','Bug Bounty','Laser Operations','Self-Learning','CorelDraw','Photoshop','Networking','Debugging','Node.js','Python','Git & GitHub','Shopify','Google Workspace','OpenClaw AI','Canva','Offensive Security','EzCad','Adobe Illustrator'];
-const mq=document.getElementById('mq');
-mq.innerHTML=[...mqItems,...mqItems].map(t=>`<span class="marquee-item">${t}</span>`).join('');
+// MARQUEE DATA with inline SVG icons
+const mqData=[
+  {label:'Digital Marketing',svg:'<path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" fill="none"/>'},
+  {label:'Social Media',svg:'<path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" fill="currentColor"/>'},
+  {label:'Graphic Design',svg:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="currentColor" stroke-width="2"/>'},
+  {label:'Kali Linux',svg:'<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z" fill="currentColor"/>'},
+  {label:'Bug Bounty',svg:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2"/>'},
+  {label:'Laser Ops',svg:'<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" fill="none" stroke="currentColor" stroke-width="2"/>'},
+  {label:'Video Editing',svg:'<polygon points="23 7 16 12 23 17 23 7" fill="currentColor"/><rect x="1" y="5" width="15" height="14" rx="2" fill="currentColor"/>'},
+  {label:'Self-Learning',svg:'<path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" fill="none" stroke="currentColor" stroke-width="2"/>'},
+  {label:'Google Workspace',svg:'<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="currentColor"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="currentColor"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="currentColor"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="currentColor"/>'},
+  {label:'Networking',svg:'<rect x="2" y="2" width="20" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="2" y="14" width="20" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="6" y1="6" x2="6.01" y2="6" stroke="currentColor" stroke-width="2"/><line x1="6" y1="18" x2="6.01" y2="18" stroke="currentColor" stroke-width="2"/>'},
+  {label:'Git & GitHub',svg:'<path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" fill="currentColor"/>'},
+];
+function mqHTML(items){
+  return [...items,...items].map(i=>`<span class="marquee-item"><svg width="16" height="16" viewBox="0 0 24 24">${i.svg}</svg>${i.label}</span><span class="marquee-sep">✦</span>`).join('');
+}
+document.getElementById('mq').innerHTML=mqHTML(mqData);
+const mq2=document.getElementById('mq2');
+if(mq2)mq2.innerHTML=mqHTML([...mqData].reverse());
 
-// TOOLBOX rails with SVG icons
-const toolsRow1=[
-  {n:'CorelDraw',i:'<path fill="none" stroke="currentColor" stroke-width="2" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>'},
-  {n:'EzCad',i:'<polygon fill="none" stroke="currentColor" stroke-width="2" points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>'},
-  {n:'Photoshop',i:'<rect fill="none" stroke="currentColor" stroke-width="2" x="2" y="2" width="20" height="20" rx="3"/><path fill="none" stroke="currentColor" stroke-width="2" d="M7 12h5a3 3 0 0 0 0-6H7v12"/>'},
-  {n:'Illustrator',i:'<path fill="none" stroke="currentColor" stroke-width="2" d="M12 2L2 19h20L12 2z"/><line fill="none" stroke="currentColor" stroke-width="2" x1="8" y1="15" x2="16" y2="15"/>'},
-  {n:'Canva',i:'<circle fill="none" stroke="currentColor" stroke-width="2" cx="12" cy="12" r="10"/><path fill="none" stroke="currentColor" stroke-width="2" d="M8 12s1-3 4-3 4 3 4 3-1 3-4 3-4-3-4-3z"/>'},
-  {n:'Freepik',i:'<path fill="none" stroke="currentColor" stroke-width="2" d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z"/>'},
-  {n:'Google Drive',i:'<path fill="none" stroke="currentColor" stroke-width="2" d="M12 2L2 19h8l2-3 2 3h8L12 2z"/><line fill="none" stroke="currentColor" stroke-width="2" x1="2" y1="19" x2="22" y2="19"/>'},
-  {n:'Google Docs',i:'<path fill="none" stroke="currentColor" stroke-width="2" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><line fill="none" stroke="currentColor" stroke-width="2" x1="8" y1="13" x2="16" y2="13"/><line fill="none" stroke="currentColor" stroke-width="2" x1="8" y1="17" x2="16" y2="17"/>'},
-  {n:'Google Sheets',i:'<rect fill="none" stroke="currentColor" stroke-width="2" x="3" y="3" width="18" height="18" rx="2"/><line fill="none" stroke="currentColor" stroke-width="2" x1="3" y1="9" x2="21" y2="9"/><line fill="none" stroke="currentColor" stroke-width="2" x1="3" y1="15" x2="21" y2="15"/><line fill="none" stroke="currentColor" stroke-width="2" x1="9" y1="3" x2="9" y2="21"/>'},
+// TOOLBOX rows
+const toolRows=[
+  [{n:'CorelDraw',i:'<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z" fill="currentColor"/>'},
+   {n:'Photoshop',i:'<rect x="2" y="3" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><text x="6" y="14" font-size="8" fill="currentColor" font-family="monospace">Ps</text>'},
+   {n:'Illustrator',i:'<rect x="2" y="3" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><text x="6" y="14" font-size="8" fill="currentColor" font-family="monospace">Ai</text>'},
+   {n:'Canva',i:'<circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><text x="7" y="16" font-size="8" fill="currentColor" font-family="monospace">Ca</text>'},
+   {n:'Freepik',i:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="currentColor" stroke-width="2"/>'},
+   {n:'EzCad',i:'<rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/>'}],
+  [{n:'Google Drive',i:'<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="currentColor"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="currentColor"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="currentColor"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="currentColor"/>'},
+   {n:'Shopify',i:'<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>'},
+   {n:'GitHub',i:'<path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" fill="currentColor"/>'},
+   {n:'Docker',i:'<path d="M22 12.5c0-1.1-.9-2-2-2h-1v-2h1c.55 0 1-.45 1-1s-.45-1-1-1h-4v-2h1c.55 0 1-.45 1-1s-.45-1-1-1H9c-.55 0-1 .45-1 1s.45 1 1 1h1v2H6c-.55 0-1 .45-1 1s.45 1 1 1h1v2H6c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2z" fill="none" stroke="currentColor" stroke-width="1.5"/>'},
+   {n:'Node.js',i:'<polyline points="16 18 22 12 16 6" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="8 6 2 12 8 18" fill="none" stroke="currentColor" stroke-width="2"/>'},
+   {n:'Python',i:'<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z" fill="currentColor"/>'}],
+  [{n:'OpenClaw',i:'<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" fill="none" stroke="currentColor" stroke-width="2"/>'},
+   {n:'Google Ads',i:'<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="currentColor"/>'},
+   {n:'Analytics',i:'<path d="M18 20V10M12 20V4M6 20v-6" fill="none" stroke="currentColor" stroke-width="2"/>'},
+   {n:'Gemini',i:'<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>'},
+   {n:'npm',i:'<rect x="2" y="8" width="20" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><text x="5" y="16" font-size="7" fill="currentColor" font-family="monospace">npm</text>'},
+   {n:'Bash',i:'<path d="M4 17l6-6-6-6M12 19h8" fill="none" stroke="currentColor" stroke-width="2"/>'}]
 ];
-const toolsRow2=[
-  {n:'Google Analytics',i:'<polyline fill="none" stroke="currentColor" stroke-width="2" points="22 12 18 12 15 21 9 3 6 12 2 12"/>'},
-  {n:'Google Ads',i:'<path fill="none" stroke="currentColor" stroke-width="2" d="M22 12h-4l-3 9L9 3l-3 9H2"/>'},
-  {n:'Gemini',i:'<polygon fill="none" stroke="currentColor" stroke-width="2" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>'},
-  {n:'Shopify',i:'<path fill="none" stroke="currentColor" stroke-width="2" d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line fill="none" stroke="currentColor" stroke-width="2" x1="3" y1="6" x2="21" y2="6"/>'},
-  {n:'OpenClaw',i:'<circle fill="none" stroke="currentColor" stroke-width="2" cx="12" cy="12" r="3"/><path fill="none" stroke="currentColor" stroke-width="2" d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/>'},
-  {n:'Git',i:'<circle fill="none" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="3"/><circle fill="none" stroke="currentColor" stroke-width="2" cx="6" cy="6" r="3"/><path fill="none" stroke="currentColor" stroke-width="2" d="M13 6h3a2 2 0 0 1 2 2v7M6 9v12"/>'},
-  {n:'GitHub',i:'<path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>'},
-  {n:'Docker',i:'<rect fill="none" stroke="currentColor" stroke-width="2" x="2" y="8" width="4" height="4"/><rect fill="none" stroke="currentColor" stroke-width="2" x="7" y="8" width="4" height="4"/><rect fill="none" stroke="currentColor" stroke-width="2" x="12" y="8" width="4" height="4"/><path fill="none" stroke="currentColor" stroke-width="2" d="M2 12s0-4 5-4h12a4 4 0 0 1 4 4"/>'},
-  {n:'Python',i:'<path fill="none" stroke="currentColor" stroke-width="2" d="M12 2C8 2 6 4 6 6v4h6v1H5s-3 .5-3 5 2.5 5 5 5h1v-3s-.5-3 3-3h6s3 .5 3-3V7s.5-5-8-5z"/><circle fill="currentColor" cx="9" cy="7" r="1"/><circle fill="currentColor" cx="15" cy="17" r="1"/>'},
-];
-function makeChip(t){return`<span class="tool-chip"><svg width="13" height="13" viewBox="0 0 24 24">${t.i}</svg>${t.n}</span>`}
-const tt1=document.getElementById('tt1'),tt2=document.getElementById('tt2');
-if(tt1)tt1.innerHTML=[...toolsRow1,...toolsRow1].map(makeChip).join('');
-if(tt2)tt2.innerHTML=[...toolsRow2,...toolsRow2].map(makeChip).join('');
+['tt1','tt2','tt3'].forEach((id,i)=>{
+  const el=document.getElementById(id);
+  if(!el)return;
+  const row=toolRows[i];
+  el.innerHTML=[...row,...row].map(t=>`<span class="tool-chip"><svg width="14" height="14" viewBox="0 0 24 24">${t.i}</svg>${t.n}</span>`).join('');
+});
 
 // SCROLL REVEAL
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),+(e.target.dataset.d||0));io.unobserve(e.target);}
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),+(e.target.dataset.d||0));
+      io.unobserve(e.target);
+    }
   });
 },{threshold:.07});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-document.querySelectorAll('.proj-big').forEach((el,i)=>{el.dataset.d=i*80;io.observe(el);});
-document.querySelectorAll('.skill-card').forEach((el,i)=>{el.dataset.d=i*40;io.observe(el);});
+document.querySelectorAll('.skill-card').forEach((el,i)=>{el.dataset.d=i*38;io.observe(el);});
 
 // FAQ
 document.querySelectorAll('.faq-q').forEach(btn=>{
-  btn.addEventListener('click',()=>{const item=btn.parentElement,open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));if(!open)item.classList.add('open');});
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement,open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  });
 });
 
 // NAV ACTIVE
-const secs=document.querySelectorAll('section[id],.section[id]'),navAs=document.querySelectorAll('.nav-links a');
-const navIO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navAs.forEach(a=>a.classList.remove('active'));const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(a)a.classList.add('active');}});},{rootMargin:'-35% 0px -60% 0px'});
-secs.forEach(s=>navIO.observe(s));
+const navAs=document.querySelectorAll('.nav-links a');
+const navIO=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navAs.forEach(a=>a.classList.remove('active'));
+      const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if(a)a.classList.add('active');
+    }
+  });
+},{rootMargin:'-30% 0px -65% 0px'});
+document.querySelectorAll('section[id],.section[id]').forEach(s=>navIO.observe(s));
 
 // TYPED
 window.addEventListener('load',()=>{
   if(typeof Typed!=='undefined'){
-    new Typed('#tw',{strings:['Known on the internet as MR. BROWN','No degree. No diploma. No shortcuts.','Just relentless curiosity, hard-won skills, and a fire that won\'t quit.','📍 Gujranwala, Punjab, Pakistan · Operating from Islamabad'],typeSpeed:50,backSpeed:30,backDelay:2000,loop:true,smartBackspace:false});
+    new Typed('#tw',{
+      strings:['Known on the internet as MR. BROWN','No degree. No diploma. No shortcuts.','Relentless curiosity, hard-won skills, and a fire that won\'t quit.','📍 Gujranwala, Pakistan · Operating from Islamabad'],
+      typeSpeed:50,backSpeed:30,backDelay:2000,loop:true,smartBackspace:false
+    });
   }
 });
 </script>
